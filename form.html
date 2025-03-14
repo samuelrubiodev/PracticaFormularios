@@ -13,11 +13,11 @@
             <input type="text" id="user" pattern="^[A-Z][a-zA-Z0-9]{5,}$">
         </p>
         <p>
-            <label for="user">Número de aficiones: </label>
+            <label for="hobbies-number">Número de aficiones: </label>
             <input type="number" id="hobbies-number" min="2" max="4">
         </p>
         <p>
-            <fieldset>
+            <fieldset class="fieldset">
                 <legend>Aficiones</legend>
                 <input type="checkbox" name="hobbies" class="hobbies" id="h-sports" > <label for="h-sports">Deportes</label>
                 <input type="checkbox" name="hobbies" class="hobbies" id="h-reading"> <label for="h-reading">Lectura</label>
@@ -27,8 +27,9 @@
             </fieldset>
         </p>
         <p>
-            <input type="submit" value="Enviar">
+            <input type="submit" value="Enviar" id="boton-submit">
         </p>
+        <p class="mensaje-aficiones"></p>
     </form>
     <script src="./scripts/script.js"></script>
 </body>
