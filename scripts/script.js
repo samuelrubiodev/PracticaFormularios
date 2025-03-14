@@ -2,8 +2,11 @@ let userLabel = document.querySelector("#user-label");
 let hobbies_number = document.querySelector("#hobbies-number");
 let aficiones = document.querySelectorAll(".hobbies");
 let botonSubmit = document.querySelector("#boton-submit");
-let mensajeAficiones = document.querySelector(".mensaje-aficiones");
 let fieldSet = document.querySelector(".fieldset");
+let form = document.querySelector("#form");
+
+let mensaje = document.createElement("p");
+form.appendChild(mensaje);
 
 document.querySelector("#user").addEventListener("input", (event)=>{
     if (event.target.validity.patternMismatch) {
@@ -32,7 +35,7 @@ aficiones.forEach(chk => {
         
         if (cuantasActivadas() == numeroAficiones) {
             fieldSet.style.border = "0.1em solid black";
-            mensajeAficiones.textContent = "";
+            mensaje.textContent = "";
             desactivarCheckboxes();
             ultimoActivadas = cuantasActivadas();
             activado = true;
@@ -53,7 +56,7 @@ botonSubmit.addEventListener("click", (event)=>{
 
     if (cuantasActivadas() < numeroAficiones) {
         event.preventDefault();
-        mensajeAficiones.textContent = "Debes seleccionar " + numeroAficiones + " aficiones";
+        mensaje.textContent = "Debes seleccionar " + numeroAficiones + " aficiones";
         fieldSet.style.border = "0.3em dashed red";
     }
 });
